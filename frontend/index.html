@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header</title>
+  <link rel="stylesheet" href="../output/tailwind.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="font-sans ">
+  <section id="body_class">
+    <div class="flex h-[70px] border-b border-gray-300">
+
+      <!-- Logo / Overview Fashion -->
+      <div class="w-[15%] hidden xl:flex items-center justify-center border-r border-gray-300">
+        <a href="#" class="no-underline text-[20px] font-bold font-sans text-gray-800 hover:text-gray-500">
+          Overview Fashion
+        </a>
+      </div>
+
+      <!-- Center section -->
+      <div class="flex-1 flex border-r border-gray-300">
+        <!-- Left icons (Hamburger, WhatsApp, Messenger) -->
+        <div class="w-1/3 flex items-center gap-4 pl-4">
+          <!-- Hamburger only on mobile -->
+          <div class="xl:hidden">
+            <i class="fa-solid fa-bars text-black text-xl cursor-pointer"></i>
+          </div>
+          <!-- Social icons -->
+          <div class="hidden md:flex gap-2">
+            <a href="#"><img src="./asset/icon/whatsapp.png" alt="WhatsApp" class="w-5"></a>
+            <a href="#"><img src="./asset/icon/messenger.png" alt="Messenger" class="w-5"></a>
+          </div>
+        </div>
+
+        <!-- Logo center -->
+        <div class="w-1/3 flex justify-center items-center">
+          <img src="./asset/icon/favicon.png" alt="Logo" class="h-[50px] md:h-[60px]">
+        </div>
+
+        <!-- Search button -->
+        <div class="w-1/3 flex justify-end items-center pr-4 hidden xl:flex ">
+          <button id="openSearchBar"
+            class="w-[70%] py-2.5 rounded-lg bg-orange-50 border border-gray-200 text-gray-700 font-medium hover:bg-gray-100 transition flex items-center justify-start px-3">
+            <i class="fa-solid fa-search mr-2"></i> Search...
+          </button>
+
+        </div>
+        <div class="w-1/3 flex justify-end items-center xl:hidden">
+          <div class="xl:hidden">
+            <i class="fa-solid fa-search mr-2 ml-1 text-[25px]" id="openSearchBarIcon"></i>
+          </div>
+          <div class="lg:hidden">
+            <i class="fa-solid fa-cart-arrow-down text-[25px] mr-[20px]"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right section: History / Cart -->
+      <div class="w-[21%] hidden lg:flex justify-center items-center">
+        <div class="flex items-center justify-center w-[80%] rounded-full border border-yellow-700 h-10">
+          <a id="historyBtn"
+            class="toggle-btn py-2 w-[49%] font-semibold rounded-full border-none bg-none text-center cursor-pointer font-sans">
+            History
+          </a>
+          <a id="cartBtn"
+            class="toggle-btn py-2 w-[49%] font-semibold rounded-full border-none bg-none text-center cursor-pointer font-sans">
+            Cart
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Header -->
+
+
+  <!-- Body -->
+  <section class="h-[calc(100vh-70px)] overflow-hidden" id="body_class">
+    <div class="flex h-full">
+      <!-- Left scroll -->
+      <div class="w-[15%] hidden xl:flex border-r border-gray-300">
+        <div class="flex-1 overflow-y-auto">
+          <div>
+            <li class="flex-shrink-0 list-none">
+              <a href="#" class="flex items-center gap-2 no-underline hover:bg-gray-200 w-full text-black pl-4 py-2">
+                <img src="./asset/image/d.png" height="30" width="30" class="rounded-full">
+                <span>All</span>
+              </a>
+            </li>
+
+            <li class="flex-shrink-0 list-none">
+              <a href="#" class="flex items-center gap-2 no-underline hover:bg-gray-200 w-full text-black pl-4 py-2">
+                <img src="./asset/image/d.png" height="30" width="30" class="rounded-full">
+                <span>T Shirt</span>
+              </a>
+            </li>
+
+            <li class="flex-shrink-0 list-none">
+              <a href="#" class="flex items-center gap-2 no-underline hover:bg-gray-200 w-full text-black pl-4 py-2">
+                <img src="./asset/image/d.png" height="30" width="30" class="rounded-full">
+                <span>T Shirt</span>
+              </a>
+            </li>
+
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Center no scroll -->
+      <div class="flex-1 border-r border-gray-300 p-4 overflow-scroll bg-orange-50">
+        <div class="flex justify-between items-center">
+          <div>
+            <h1 class="p-0 m-0 text-[20px] sm:text-[40px] text-yellow-700">All Products</h1>
+          </div>
+          <div>
+            <select name="" id=""
+              class="p-2.5 pl-4 pr-8 rounded-lg bg-white border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-300 shadow-sm appearance-none">
+              <option value="">Sort by</option>
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+
+          </div>
+        </div>
+
+        <div class="flex flex-wrap  mt-3 w-[100%]">
+
+
+          <div class="lg:w-1/4 w-1/2 md:w-1/3 sm:w-1/2 h-80 flex justify-center">
+            <div class="w-[95%] border border-gray-400 rounded-lg h-[95%] flex  flex-col ">
+              <img src="./asset/image/b.png" alt="" class="w-[93%] p-2 h-[65%] rounded-[20px]">
+              <p class="p-0 m-0 px-3 text-center">net polo marun </p>
+              <div class="flex justify-center px-3 gap-4">
+                <p class="p-0 m-0">৳ 750</p>
+                <p class="p-0 m-0"><del>৳ 850</del></p>
+              </div>
+              <button id="showModalBtn"
+                class="mx-3 py-2 mt-1 rounded-full border-none bg-yellow-700 text-white hover:bg-yellow-800 cursor-pointer">Add
+                to Cart</button>
+            </div>
+          </div>
+
+          <div class="lg:w-1/4 w-1/2 md:w-1/3 sm:w-1/2 h-80 flex justify-center">
+            <div class="w-[95%] border border-gray-400 rounded-lg h-[95%] flex  flex-col ">
+              <img src="./asset/image/b.png" alt="" class="w-[93%] p-2 h-[65%] rounded-[20px]">
+              <p class="p-0 m-0 px-3 text-center">net polo marun </p>
+              <div class="flex justify-center px-3 gap-4">
+                <p class="p-0 m-0">৳ 750</p>
+                <p class="p-0 m-0"><del>৳ 850</del></p>
+              </div>
+              <button
+                class="mx-3 py-2 mt-1 rounded-full border-none bg-yellow-700 text-white hover:bg-yellow-800 cursor-pointer">Add
+                to Cart</button>
+            </div>
+          </div>
+
+          <div class="lg:w-1/4 w-1/2 md:w-1/3 sm:w-1/2 h-80 flex justify-center">
+            <div class="w-[95%] border border-gray-400 rounded-lg h-[95%] flex  flex-col ">
+              <img src="./asset/image/b.png" alt="" class="w-[93%] p-2 h-[65%] rounded-[20px]">
+              <p class="p-0 m-0 px-3 text-center">net polo marun </p>
+              <div class="flex justify-center px-3 gap-4">
+                <p class="p-0 m-0">৳ 750</p>
+                <p class="p-0 m-0"><del>৳ 850</del></p>
+              </div>
+              <button
+                class="mx-3 py-2 mt-1 rounded-full border-none bg-yellow-700 text-white hover:bg-yellow-800 cursor-pointer">Add
+                to Cart</button>
+            </div>
+          </div>
+
+          <div class="lg:w-1/4 w-1/2 md:w-1/3 sm:w-1/2 h-80 flex justify-center">
+            <div class="w-[95%] border border-gray-400 rounded-lg h-[95%] flex  flex-col ">
+              <img src="./asset/image/b.png" alt="" class="w-[93%] p-2 h-[65%] rounded-[20px]">
+              <p class="p-0 m-0 px-3 text-center">net polo marun </p>
+              <div class="flex justify-center px-3 gap-4">
+                <p class="p-0 m-0">৳ 750</p>
+                <p class="p-0 m-0"><del>৳ 850</del></p>
+              </div>
+              <button
+                class="mx-3 py-2 mt-1 rounded-full border-none bg-yellow-700 text-white hover:bg-yellow-800 cursor-pointer">Add
+                to Cart</button>
+            </div>
+          </div>
+
+
+          <div class="lg:w-1/4 w-1/2 md:w-1/3 sm:w-1/2 h-80 flex justify-center">
+            <div class="w-[95%] border border-gray-400 rounded-lg h-[95%] flex  flex-col ">
+              <img src="./asset/image/b.png" alt="" class="w-[93%] p-2 h-[65%] rounded-[20px]">
+              <p class="p-0 m-0 px-3 text-center">net polo marun </p>
+              <div class="flex justify-center px-3 gap-4">
+                <p class="p-0 m-0">৳ 750</p>
+                <p class="p-0 m-0"><del>৳ 850</del></p>
+              </div>
+              <button
+                class="mx-3 py-2 mt-1 rounded-full border-none bg-yellow-700 text-white hover:bg-yellow-800 cursor-pointer">Add
+                to Cart</button>
+            </div>
+          </div>
+
+          <div class="lg:w-1/4 w-1/2 md:w-1/3 sm:w-1/2 h-80 flex justify-center">
+            <div class="w-[95%] border border-gray-400 rounded-lg h-[95%] flex  flex-col ">
+              <img src="./asset/image/b.png" alt="" class="w-[93%] p-2 h-[65%] rounded-[20px]">
+              <p class="p-0 m-0 px-3 text-center">net polo marun </p>
+              <div class="flex justify-center px-3 gap-4">
+                <p class="p-0 m-0">৳ 750</p>
+                <p class="p-0 m-0"><del>৳ 850</del></p>
+              </div>
+              <button
+                class="mx-3 py-2 mt-1 rounded-full border-none bg-yellow-700 text-white hover:bg-yellow-800 cursor-pointer">Add
+                to Cart</button>
+            </div>
+          </div>
+
+          <div class="lg:w-1/4 w-1/2 md:w-1/3 sm:w-1/2 h-80 flex justify-center">
+            <div class="w-[95%] border border-gray-400 rounded-lg h-[95%] flex  flex-col ">
+              <img src="./asset/image/b.png" alt="" class="w-[93%] p-2 h-[65%] rounded-[20px]">
+              <p class="p-0 m-0 px-3 text-center">net polo marun </p>
+              <div class="flex justify-center px-3 gap-4">
+                <p class="p-0 m-0">৳ 750</p>
+                <p class="p-0 m-0"><del>৳ 850</del></p>
+              </div>
+              <button
+                class="mx-3 py-2 mt-1 rounded-full border-none bg-yellow-700 text-white hover:bg-yellow-800 cursor-pointer">Add
+                to Cart</button>
+            </div>
+          </div>
+
+          <div class="lg:w-1/4 w-1/2 md:w-1/3 sm:w-1/2 h-80 flex justify-center">
+            <div class="w-[95%] border border-gray-400 rounded-lg h-[95%] flex  flex-col ">
+              <img src="./asset/image/b.png" alt="" class="w-[93%] p-2 h-[65%] rounded-[20px]">
+              <p class="p-0 m-0 px-3 text-center">net polo marun </p>
+              <div class="flex justify-center px-3 gap-4">
+                <p class="p-0 m-0">৳ 750</p>
+                <p class="p-0 m-0"><del>৳ 850</del></p>
+              </div>
+              <button
+                class="mx-3 py-2 mt-1 rounded-full border-none bg-yellow-700 text-white hover:bg-yellow-800 cursor-pointer">Add
+                to Cart</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right scroll -->
+      <div class="w-[21%] hidden lg:flex">
+        <div class="flex-1 overflow-y-auto p-4">
+          Lorem ipsum... long content
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Top Search Bar -->
+  <div id="topSearchBar" class="fixed top-0 left-0 w-full h-[100%]  backdrop-blur-[5px] shadow-sm z-50 hidden">
+    <div class="mt-5 flex justify-center">
+      <input type="text" placeholder="Search products..."
+        class=" outline-none text-gray-700 text-base h-10 rounded-[10px] px-4 border-yellow-700 border-[2px]  w-4/5  md:w-3/5   lg:w-4/10">
+    </div>
+  </div>
+
+  <div id="shadowShowModelLeft" class="fixed top-0 left-0 w-full h-[100%]  backdrop-blur-[5px] shadow-sm z-50 hidden"></div>
+  <div id="shadowShowModelRigth" class="fixed top-0 left-0 w-full h-[100%]  backdrop-blur-[5px] shadow-sm z-50 hidden"></div>
+
+
+  <!-- Product Modal -->
+  <div id="productModal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden px-4">
+
+    <div class="bg-white rounded-2xl w-full max-w-md p-5 relative shadow-xl">
+
+      <!-- Close button -->
+      <button id="closeModal"
+        class="absolute top-3 right-3 w-9 h-9 flex items-center justify-center rounded-full border border-yellow-700 text-yellow-700 cursor-pointer hover:bg-yellow-700 hover:text-white text-yellow-700 text-xl font-bold">
+        &times;
+      </button>
+
+      <!-- Product info -->
+      <div class="flex gap-4">
+        <img id="modalImg" src="./asset/image/b.png" alt="Product"
+          class="w-[120px] h-[120px] object-cover rounded-xl border">
+        <div class="flex flex-col mt-5">
+          <p id="modalTitle" class="text-lg font-semibold text-gray-800">
+            Product Name
+          </p>
+
+          <div class="flex items-center gap-3 mt-1">
+            <p id="modalPrice" class="text-yellow-700 font-bold text-lg">৳ 750</p>
+            <p id="modalOldPrice" class="text-gray-400 line-through">৳ 850</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Size selector -->
+      <div class="mt-5">
+        <p class="text-sm font-medium text-gray-700 mb-2">Size</p>
+
+        <div class="flex gap-2">
+          <button
+            class="w-9 h-9 rounded-full border border-yellow-700 text-yellow-700 font-semibold hover:bg-yellow-700 hover:text-white transition">S</button>
+
+          <button
+            class="w-9 h-9 rounded-full border border-yellow-700 text-yellow-700 font-semibold hover:bg-yellow-700 hover:text-white transition">
+            M</button>
+
+          <button
+            class="w-9 h-9 rounded-full border border-yellow-700 text-yellow-700 font-semibold hover:bg-yellow-700 hover:text-white transition">XL</button>
+        </div>
+      </div>
+
+      <!-- Add to cart -->
+      <button
+        class="w-full mt-6 py-2.5 rounded-full bg-yellow-700 text-white font-semibold hover:bg-yellow-800 transition border-none">
+        Add to Cart
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- Mobile Sidebar -->
+  <div id="mobileSidebar"
+    class="fixed top-0 left-0 h-full w-64 bg-white  shadow-lg transform -translate-x-full transition-transform z-50 rounded-tr-[15px] rounded-br-[15px]">
+
+    <div class="flex justify-between items-center mx-5  h-[70px]">
+      <h2 class="text-lg font-bold">Overview Fashion</h2>
+      <div
+        class="w-10 ml-2 h-10 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center cursor-pointer shadow-md transition-all duration-200">
+        <i id="closeSidebar" class="text-xl ">&times;</i>
+      </div>
+    </div>
+
+    <div class="flex-1 overflow-y-auto">
+      <div>
+        <li class="flex-shrink-0 list-none">
+          <a href="#" class="flex items-center gap-2 no-underline hover:bg-gray-200 w-full text-black pl-4 py-2">
+            <img src="./asset/image/d.png" height="30" width="30" class="rounded-full">
+            <span>All</span>
+          </a>
+        </li>
+
+        <li class="flex-shrink-0 list-none">
+          <a href="#" class="flex items-center gap-2 no-underline hover:bg-gray-200 w-full text-black pl-4 py-2">
+            <img src="./asset/image/d.png" height="30" width="30" class="rounded-full">
+            <span>T Shirt</span>
+          </a>
+        </li>
+
+        <li class="flex-shrink-0 list-none">
+          <a href="#" class="flex items-center gap-2 no-underline hover:bg-gray-200 w-full text-black pl-4 py-2">
+            <img src="./asset/image/d.png" height="30" width="30" class="rounded-full">
+            <span>T Shirt</span>
+          </a>
+        </li>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Right Sidebar (Cart) -->
+  <div id="cartSidebar"
+    class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform z-50 rounded-tl-[15px] rounded-bl-[15px]">
+    <div class="flex justify-between items-center   mx-2 h-[70px]">
+      <div
+        class="w-13 mr-2 h-10 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center cursor-pointer shadow-md transition-all duration-200">
+        <i id="closeCart" class="text-xl font-bold text-gray-700">&times;</i>
+      </div>
+
+      <div class="flex items-center justify-center w-[100%] rounded-full border border-yellow-700 h-10">
+        <a id="historyBtns"
+          class="toggle-btn py-2 w-[49%] font-semibold rounded-full border-none bg-none text-center cursor-pointer font-sans">
+          History
+        </a>
+        <a id="cartBtns"
+          class="toggle-btn py-2 w-[49%] font-semibold rounded-full border-none bg-none text-center cursor-pointer font-sans">
+          Cart
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./asset/script/JavaScript.js"></script>
+</body>
+
+</html>
