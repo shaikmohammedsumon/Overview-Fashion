@@ -261,6 +261,84 @@
   </section>
 
 
+  <div class="fixed bottom-5 left-5 flex flex-col items-center space-y-3 z-50 md:hidden gap-2">
+    <button id="fabBtn1"
+      class="w-10 h-10 rounded-full bg-black text-white text-xl shadow-lg flex items-center justify-center hidden border-none">
+      <a href="#"><img src="./asset/icon/whatsapp.png" alt="WhatsApp" class="w-5"></a>
+    </button>
+    <button id="fabBtn2"
+      class="w-10 h-10 rounded-full bg-black text-white text-xl shadow-lg flex items-center justify-center hidden border-none">
+      <a href="#"><img src="./asset/icon/messenger.png" alt="Messenger" class="w-5"></a>
+    </button>
+    <button id="mainFAB"
+      class="w-10 h-10 rounded-full bg-black text-white text-3xl shadow-lg flex items-center justify-center hover:bg-yellow-600 transition">+</button>
+  </div>
+
+  <!-- Extra view (right bottom) -->
+  <div class="fixed bottom-5 right-5 flex items-center  lg:hidden">
+    <button id="openBottomModal"
+      class="w-55 h-10 bg-blue-500 flex items-center justify-center rounded-lg text-white font-semibold shadow-md border-none">
+      Extra view & 500 TK
+    </button>
+  </div>
+
+
+  <!-- Modal -->
+  <!-- Modal -->
+  <!-- Modal -->
+<div id="bottomModal"
+    class="fixed inset-0 flex items-end justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50 ">
+
+    <div
+      class="bg-white rounded-t-lg p-6 w-full max-w-md h-[70vh] transform translate-y-[100%] transition-transform duration-500 relative overflow-auto">
+
+      <!-- Close button top-right -->
+      <button id="bottomCloseModal" class="absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center border border-yellow-700 text-yellow-700 font-semibold hover:bg-yellow-700 hover:text-white transition">&times;</button>
+
+      <h2 class="text-xl font-bold mb-4">Extra View Details</h2>
+      <p>আপনি এখন 500 TK দিয়ে extra view নিতে পারেন।</p>
+
+      <!-- Extra content for scroll test -->
+      <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a massa sit amet arcu euismod laoreet. Morbi vel tellus non sapien dictum sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+      <p class="mt-2">Additional content...</p>
+      <p class="mt-2">Additional content...</p>
+      <p class="mt-2">Additional content...</p>
+    </div>
+</div>
+
+<script>
+  const openModalBottom = document.getElementById('openBottomModal');
+  const closeModalBottom = document.getElementById('bottomCloseModal');
+  const modalBottom = document.getElementById('bottomModal');
+  const modalContentBottom = modalBottom.querySelector('div');
+
+  // Open modal
+  openModalBottom.addEventListener('click', () => {
+    modalBottom.classList.remove('opacity-0', 'pointer-events-none');
+    modalContentBottom.classList.remove('translate-y-[100%]');
+    modalContentBottom.classList.add('translate-y-0');
+  });
+
+  // Close modal function
+  const closeFuncBottom = () => {
+    modalContentBottom.classList.remove('translate-y-0');
+    modalContentBottom.classList.add('translate-y-[100%]');
+    modalBottom.classList.add('opacity-0');
+    setTimeout(() => {
+      modalBottom.classList.add('pointer-events-none');
+    }, 500); // wait for slide animation
+  };
+
+  closeModalBottom.addEventListener('click', closeFuncBottom);
+
+  // Click outside modal content
+  modalBottom.addEventListener('click', (e) => {
+    if (e.target === modalBottom) closeFuncBottom();
+  });
+</script>
+
+
+
   <!-- Top Search Bar -->
   <div id="topSearchBar" class="fixed top-0 left-0 w-full h-[100%]  backdrop-blur-[5px] shadow-sm z-50 hidden">
     <div class="mt-5 flex justify-center">
@@ -269,12 +347,15 @@
     </div>
   </div>
 
-  <div id="shadowShowModelLeft" class="fixed top-0 left-0 w-full h-[100%]  backdrop-blur-[5px] shadow-sm z-50 hidden"></div>
-  <div id="shadowShowModelRigth" class="fixed top-0 left-0 w-full h-[100%]  backdrop-blur-[5px] shadow-sm z-50 hidden"></div>
+  <div id="shadowShowModelLeft" class="fixed top-0 left-0 w-full h-[100%]  backdrop-blur-[5px] shadow-sm z-50 hidden">
+  </div>
+  <div id="shadowShowModelRigth" class="fixed top-0 left-0 w-full h-[100%]  backdrop-blur-[5px] shadow-sm z-50 hidden">
+  </div>
 
 
   <!-- Product Modal -->
-  <div id="productModal" class="fixed inset-0 backdrop-blur-[5px] shadow-sm z-50 flex items-center justify-center hidden px-4">
+  <div id="productModal"
+    class="fixed inset-0 backdrop-blur-[5px] shadow-sm z-50 flex items-center justify-center hidden px-4">
     <div class="bg-white rounded-2xl w-full max-w-md p-5 relative shadow-xl">
 
       <!-- Close button -->

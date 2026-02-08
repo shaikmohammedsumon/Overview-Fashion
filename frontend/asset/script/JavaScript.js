@@ -125,3 +125,22 @@ modal.addEventListener('click', (e) => {
     }
 });
 // product add to cart 
+
+
+const mainFAB = document.getElementById('mainFAB');
+const fabBtn1 = document.getElementById('fabBtn1');
+const fabBtn2 = document.getElementById('fabBtn2');
+
+let expanded = false;
+
+mainFAB.addEventListener('click', () => {
+    expanded = !expanded;
+
+    if (expanded) {
+        fabBtn1.classList.remove('hidden');
+        fabBtn2.classList.remove('hidden');
+    } else {
+        fabBtn1.classList.add('hidden');
+        fabBtn2.classList.add('hidden');
+    }
+});
