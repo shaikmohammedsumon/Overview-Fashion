@@ -20,12 +20,12 @@ document.addEventListener('keydown', (e) => {
         searchBar.classList.add('hidden');
     }
 });
-// search model 
+// search model
 
 
 
 
-// cart & history 
+// cart & history
 const historyBtn = document.getElementById('historyBtn');
 const cartBtn = document.getElementById('cartBtn');
 
@@ -33,20 +33,85 @@ function selectButton(selected, other) {
     selected.classList.add('bg-yellow-700', 'text-white', 'border', 'border-gray-900');
     other.classList.remove('bg-yellow-700', 'text-white', 'border', 'border-gray-900');
 }
+
+selectButton(cartBtn, historyBtn); cartBtnDiv.classList.remove('hidden');
+    historyBtnDiv.classList.add('hidden');
+    historyBtn.addEventListener('click', () => {
+        selectButton(historyBtn, cartBtn);
+        historyBtnDiv.classList.remove('hidden'); cartBtnDiv.classList.add('hidden');
+    });
+    cartBtn.addEventListener('click', () => {
+        selectButton(cartBtn, historyBtn);
+        cartBtnDiv.classList.remove('hidden'); historyBtnDiv.classList.add('hidden');
+    });
+
 selectButton(historyBtn, cartBtn);
 historyBtn.addEventListener('click', () => selectButton(historyBtn, cartBtn));
 cartBtn.addEventListener('click', () => selectButton(cartBtn, historyBtn));
 document.addEventListener('DOMContentLoaded', () => {
-    const historyBtn = document.getElementById('historyBtns');
-    const cartBtn = document.getElementById('cartBtns');
-    function selectButton(selected, other) {
-        selected.classList.add('bg-yellow-700', 'text-white', 'border', 'border-gray-900');
-        other.classList.remove('bg-yellow-700', 'text-white', 'border', 'border-gray-900');
+
+    // First set
+    const historyBtn = document.getElementById('historyBtn');
+    const cartBtn = document.getElementById('cartBtn');
+
+    const historyBtnDiv = document.getElementById('historyBtnDiv');
+    const cartBtnDiv = document.getElementById('cartBtnDiv');
+
+    // Second set
+    const historyBtns = document.getElementById('historyBtns');
+    const cartBtns = document.getElementById('cartBtns');
+
+    const historyBtnDivs = document.getElementById('historyBtnDivs');
+    const cartBtnDivs = document.getElementById('cartBtnDivs');
+
+
+    function activateHistory1() {
+        historyBtn.classList.add('bg-yellow-700','text-white','border','border-gray-900');
+        cartBtn.classList.remove('bg-yellow-700','text-white','border','border-gray-900');
+
+        historyBtnDiv.classList.remove('hidden');
+        cartBtnDiv.classList.add('hidden');
     }
-    selectButton(historyBtn, cartBtn);
-    historyBtn.addEventListener('click', () => selectButton(historyBtns, cartBtns));
-    cartBtn.addEventListener('click', () => selectButton(cartBtns, historyBtns));
+
+    function activateCart1() {
+        cartBtn.classList.add('bg-yellow-700','text-white','border','border-gray-900');
+        historyBtn.classList.remove('bg-yellow-700','text-white','border','border-gray-900');
+
+        cartBtnDiv.classList.remove('hidden');
+        historyBtnDiv.classList.add('hidden');
+    }
+
+
+    function activateHistory2() {
+        historyBtns.classList.add('bg-yellow-700','text-white','border','border-gray-900');
+        cartBtns.classList.remove('bg-yellow-700','text-white','border','border-gray-900');
+
+        historyBtnDivs.classList.remove('hidden');
+        cartBtnDivs.classList.add('hidden');
+    }
+
+    function activateCart2() {
+        cartBtns.classList.add('bg-yellow-700','text-white','border','border-gray-900');
+        historyBtns.classList.remove('bg-yellow-700','text-white','border','border-gray-900');
+
+        cartBtnDivs.classList.remove('hidden');
+        historyBtnDivs.classList.add('hidden');
+    }
+
+    // Event listeners
+    historyBtn.addEventListener('click', activateHistory1);
+    cartBtn.addEventListener('click', activateCart1);
+
+    historyBtns.addEventListener('click', activateHistory2);
+    cartBtns.addEventListener('click', activateCart2);
+
+
+    // ✅ Default दोनों জায়গায় Cart active
+    activateCart1();
+    activateCart2();
+
 });
+
 // cart & history 
 
 
