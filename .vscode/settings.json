@@ -1,4 +1,23 @@
 {
   "css.validate": false,
-  "tailwindCSS.emmetCompletions": true
+  "tailwindCSS.emmetCompletions": true,
+
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.autoSave": "afterDelay",
+
+  "emmet.includeLanguages": {
+    "javascript": "html"
+  },
+
+  "files.associations": {
+    "*.html": "html"
+  },
+
+  "prettier.printWidth": 200,
+  "prettier.singleAttributePerLine": false,
+  "prettier.bracketSameLine": true,
+  "prettier.htmlWhitespaceSensitivity": "ignore"
 }
